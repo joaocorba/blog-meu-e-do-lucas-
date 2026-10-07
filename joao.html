@@ -1,0 +1,472 @@
+A página atual não disponibilizou o código para leitura. Abaixo está uma versão completa do blog em um único arquivo index.html. Copie tudo e salve com esse nome:
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>João e Lucas | Pescaria e Futebol</title>
+
+  <style>
+    :root {
+      --azul: #1261a0
+;
+      --azul-escuro: #073b66
+;
+      --verde: #2e9b62
+;
+      --laranja: #f28c28
+;
+      --claro: #f4f8fb
+;
+      --branco: #ffffff
+;
+      --texto: #243447
+;
+      --sombra: 0 8px 22px rgba(0, 0, 0, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--claro);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--azul-escuro), var(--azul));
+      color: var(--branco);
+      padding: 20px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: var(--sombra);
+    }
+
+    .barra-navegacao {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .hero {
+      min-height: 520px;
+      padding: 90px 8%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--branco);
+      background:
+        linear-gradient(rgba(7, 59, 102, 0.75), rgba(18, 97, 160, 0.8)),
+        linear-gradient(135deg, #247ba0
+, #70c1b3
+);
+    }
+
+    .hero-conteudo {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 28px;
+    }
+
+    .botao {
+      display: inline-block;
+      border: none;
+      padding: 13px 22px;
+      border-radius: 30px;
+      background: var(--laranja);
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .botao:hover {
+      background: #d97212
+;
+      transform: translateY(-3px);
+    }
+
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 60px 8%;
+    }
+
+    section {
+      margin-bottom: 70px;
+      scroll-margin-top: 100px;
+    }
+
+    .titulo-secao {
+      color: var(--azul-escuro);
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .subtitulo {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #526273
+;
+    }
+
+    .cartoes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .cartao {
+      background: var(--branco);
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: var(--sombra);
+      border-top: 6px solid var(--azul);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cartao:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
+    }
+
+    .cartao.lucas {
+      border-top-color: var(--verde);
+    }
+
+    .cartao h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: var(--azul-escuro);
+    }
+
+    .cartao p {
+      margin-bottom: 10px;
+    }
+
+    .emoji-grande {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .aventuras {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .aventura {
+      background: var(--branco);
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: var(--sombra);
+    }
+
+    .aventura.pescaria {
+      border-bottom: 6px solid var(--verde);
+    }
+
+    .aventura.futebol {
+      border-bottom: 6px solid var(--laranja);
+    }
+
+    .aventura h3 {
+      margin: 12px 0;
+      color: var(--azul-escuro);
+    }
+
+    .mensagem {
+      max-width: 750px;
+      margin: auto;
+      background: linear-gradient(135deg, var(--verde), #217346
+);
+      color: var(--branco);
+      padding: 35px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: var(--sombra);
+    }
+
+    .mensagem h2 {
+      margin-bottom: 15px;
+    }
+
+    #texto-amizade {
+      min-height: 30px;
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+
+    .rodape {
+      background: var(--azul-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 25px 8%;
+    }
+
+    .destaque {
+      outline: 4px solid var(--laranja);
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 700px) {
+      .barra-navegacao {
+        flex-direction: column;
+      }
+
+      header {
+        position: static;
+      }
+
+      .hero {
+        padding: 70px 6%;
+      }
+
+      main {
+        padding: 45px 6%;
+      }
+
+      .cartoes,
+      .aventuras {
+        grid-template-columns: 1fr;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+        padding: 6px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="barra-navegacao">
+      <div class="logo">João & Lucas</div>
+
+      <nav aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#amigos">Amigos</a>
+        <a href="#aventuras">Aventuras</a>
+        <a href="#amizade">Amizade</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio">
+    <div class="hero-conteudo">
+      <div class="emoji-grande">🎣 ⚽</div>
+
+      <h1>João e Lucas</h1>
+
+      <p>
+        Um blog sobre dois amigos que gostam de pescar,
+        jogar bola e aproveitar bons momentos juntos.
+      </p>
+
+      <a class="botao" href="#amigos">Conheça nossa história</a>
+    </div>
+  </section>
+
+  <main>
+    <section id="amigos">
+      <h2 class="titulo-secao">Quem somos</h2>
+
+      <p class="subtitulo">
+        Cada amigo tem seu jeito, mas os dois compartilham grandes aventuras.
+      </p>
+
+      <div class="cartoes">
+        <article class="cartao">
+          <div class="emoji-grande">👋</div>
+          <h3>João</h3>
+
+          <p>
+            João é branco, alto e um pouco gordinho.
+            Ele gosta de pescar e jogar bola com seu amigo Lucas.
+          </p>
+
+          <p>
+            Nos momentos de diversão, João aproveita a companhia,
+            as conversas e as brincadeiras.
+          </p>
+        </article>
+
+        <article class="cartao lucas">
+          <div class="emoji-grande">⚡</div>
+          <h3>Lucas</h3>
+
+          <p>
+            Lucas é branco, alto e magro.
+            Ele também gosta de pescar e jogar bola.
+          </p>
+
+          <p>
+            Junto com João, Lucas transforma momentos simples
+            em boas lembranças.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="aventuras">
+      <h2 class="titulo-secao">Nossas aventuras</h2>
+
+      <p class="subtitulo">
+        Dois hobbies que fazem parte da diversão de João e Lucas.
+      </p>
+
+      <div class="aventuras">
+        <article class="aventura pescaria">
+          <div class="emoji-grande">🎣</div>
+          <h3>Dia de pescaria</h3>
+
+          <p>
+            Pescar é uma oportunidade para ficar tranquilo,
+            conversar e curtir a natureza juntos.
+          </p>
+        </article>
+
+        <article class="aventura futebol">
+          <div class="emoji-grande">⚽</div>
+          <h3>Hora do futebol</h3>
+
+          <p>
+            Jogar bola é sinônimo de diversão, movimento,
+            competição saudável e muitas risadas.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="amizade">
+      <div class="mensagem">
+        <h2>Amizade em primeiro lugar</h2>
+
+        <p>
+          João e Lucas mostram que a amizade fica ainda melhor
+          quando existe diversão, respeito e parceria.
+        </p>
+
+        <p id="texto-amizade">
+          Clique no botão para receber uma mensagem.
+        </p>
+
+        <button class="botao" id="botao-mensagem">
+          Mostrar mensagem
+        </button>
+      </div>
+    </section>
+
+    <section id="favoritos">
+      <h2 class="titulo-secao">Escolha uma aventura</h2>
+
+      <p class="subtitulo">
+        Clique em uma opção para destacá-la.
+      </p>
+
+      <div class="aventuras">
+        <button class="aventura pescaria escolha" type="button">
+          🎣 Destacar pescaria
+        </button>
+
+        <button class="aventura futebol escolha" type="button">
+          ⚽ Destacar futebol
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>© 2026 João e Lucas. Um blog feito sobre amizade e diversão.</p>
+  </footer>
+
+  <script>
+    const botaoMensagem = document.getElementById("botao-mensagem");
+    const textoAmizade = document.getElementById("texto-amizade");
+
+    const mensagens = [
+      "Uma boa amizade deixa qualquer aventura mais divertida!",
+      "João e Lucas juntos formam uma grande dupla!",
+      "Pescar, jogar bola e compartilhar bons momentos é melhor com um amigo!",
+      "A amizade cresce quando existe parceria e respeito!"
+    ];
+
+    let indiceMensagem = 0;
+
+    botaoMensagem.addEventListener("click", function () {
+      textoAmizade.textContent = mensagens[indiceMensagem];
+
+      indiceMensagem++;
+
+      if (indiceMensagem >= mensagens.length) {
+        indiceMensagem = 0;
+      }
+    });
+
+    const botoesEscolha = document.querySelectorAll(".escolha");
+
+    botoesEscolha.forEach(function (botao) {
+      botao.addEventListener("click", function () {
+        botoesEscolha.forEach(function (item) {
+          item.classList.remove("destaque");
+        });
+
+        botao.classList.add("destaque");
+      });
+    });
+  </script>
+</body>
+</html>
+
+Esse arquivo já contém o HTML, o CSS e o JavaScript. Basta abrir index.html no navegador.
